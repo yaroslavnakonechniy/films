@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.main');
+});
+
+Route::group(['namespace' => 'Genre'], function (){
+    Route::get('/genre', 'IndexController')->name('genre.index');
+    Route::get('/genre/{id}/show', 'ShowController')->name('genre.show');
+    Route::get('/genre/create', 'CreateController')->name('genre.create');
+    Route::post('/genre/store', 'StoreController')->name('genre.store');
+    Route::get('/genre/{id}/edit', 'EditController')->name('genre.edit');
+    Route::post('/genre/{id}/update', 'UpdateController')->name('genre.update');
+    Route::get('/genre/{id}/delete', 'DestroyController')->name('genre.destroy');    
 });
