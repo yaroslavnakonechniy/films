@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="">Films</a>
+        <a class="nav-link" href="{{ route('film.index')}}">Films</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="{{ route('genre.index')}}">Genre</a>
