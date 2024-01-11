@@ -14,6 +14,7 @@
 
         <p>NAME:{{ $film->name }}</p>
         <p>STATUS:{{ $film->status }}</p>
+        <a href="{{route('film.status', $film->id )}}"><button type="button" class="btn btn-{{$film->status ? 'success' : 'danger'}}">{{$film->status ? "Enable" : "Disable"}}</button></a>
         <p>{{ $film->img }}</p>
         <img src="{{ Storage::disk('')->url($film->path) }}" />
         

@@ -29,6 +29,8 @@ Route::group(['namespace' => 'Genre'], function (){
 
 Route::group(['namespace' => 'Film'], function (){
     Route::get('/film', 'IndexController')->name('film.index');
+    Route::get('/all', 'AllController')->name('film.all');
+    Route::get('/film/status/{id}', 'StatusController')->name('film.status');
     Route::get('/film/{id}/show', 'ShowController')->name('film.show');
     Route::get('/film/create', 'CreateController')->name('film.create');
     Route::post('/film/store', 'StoreController')->name('film.store');
