@@ -26,3 +26,13 @@ Route::group(['namespace' => 'Genre'], function (){
     Route::post('/genre/{id}/update', 'UpdateController')->name('genre.update');
     Route::get('/genre/{id}/delete', 'DestroyController')->name('genre.destroy');    
 });
+
+Route::group(['namespace' => 'Film'], function (){
+    Route::get('/film', 'IndexController')->name('film.index');
+    Route::get('/film/{id}/show', 'ShowController')->name('film.show');
+    Route::get('/film/create', 'CreateController')->name('film.create');
+    Route::post('/film/store', 'StoreController')->name('film.store');
+    Route::get('/film/{id}/edit', 'EditController')->name('film.edit');
+    Route::post('/film/{id}/update', 'UpdateController')->name('film.update');
+    Route::get('/film/{id}/delete', 'DestroyController')->name('film.destroy');    
+});
