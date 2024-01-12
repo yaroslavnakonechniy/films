@@ -15,7 +15,5 @@ class StoreController extends BaseController
         $this->service->store($film_request, $genre_request);
 
         return redirect()->route('film.index')->with('success', 'Дані булo додано успішно');
-
     }
-
 }

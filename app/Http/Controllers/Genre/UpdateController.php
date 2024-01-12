@@ -15,7 +15,5 @@ class UpdateController extends BaseController
         $this->service->update($request, $genre_id);
         
         return redirect()->route('genre.index')->with('success', 'Дані булo оновлено успішно');
-
     }
-
 }

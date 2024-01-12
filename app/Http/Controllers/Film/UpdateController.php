@@ -15,6 +15,5 @@ class UpdateController extends BaseController
         $this->service->update($film_request, $genre_request, $film_id);
         
         return redirect()->route('film.index')->with('success', 'Дані булo оновлено успішно');
-
     }
 }

@@ -29,10 +29,25 @@ Route::group(['namespace' => 'Genre'], function (){
 
 Route::group(['namespace' => 'Film'], function (){
     Route::get('/film', 'IndexController')->name('film.index');
+    Route::get('/all', 'AllController')->name('film.all');
+    Route::get('/film/status/{id}', 'StatusController')->name('film.status');
     Route::get('/film/{id}/show', 'ShowController')->name('film.show');
     Route::get('/film/create', 'CreateController')->name('film.create');
     Route::post('/film/store', 'StoreController')->name('film.store');
     Route::get('/film/{id}/edit', 'EditController')->name('film.edit');
     Route::post('/film/{id}/update', 'UpdateController')->name('film.update');
     Route::get('/film/{id}/delete', 'DestroyController')->name('film.destroy');    
+});
+
+Route::group(['namespace' => 'Api'], function () {
+
+    Route::group(['namespace' => 'Film'], function () {
+        Route::get('/films', 'IndexController');
+        Route::get('/films/{id}', 'ShowController');
+    });
+
+    Route::group(['namespace' => 'Genre'], function () {
+        Route::get('/genres', 'IndexController');
+        Route::get('/genres/{id}', 'ShowFilmController');
+    });
 });

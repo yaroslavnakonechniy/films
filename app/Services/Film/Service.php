@@ -15,6 +15,7 @@ class Service {
         
         $film->name = $film_request->input('name');
         $film->status = $film_request->input('status');
+        
         if($film_request->hasFile('img')) {
             $film->img = $film_request->file('img')->store('public');
             $film->save();
@@ -60,5 +61,22 @@ class Service {
         Storage::disk('')->delete($film->img);
 
         $film->delete();
+    }
+
+    public function updateStatus($film_id){
+
+        $film = Film::find($film_id);
+
+        if($film){
+            if($film->status){
+
+                $film->status = 0;
+            }else{
+    
+                $film->status = 1;
+            }
+        }
+
+        $film->save();
     }
 }
