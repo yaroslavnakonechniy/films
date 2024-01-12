@@ -26,7 +26,8 @@ class FilmRequest extends FormRequest
         return [
             "name" => "required",
             "status" => "required",
-            "img" => "required"
+            "img" => "required|mimes:jpeg,png,pdf|max:2048",
+            "genre_id" => "required"
         ];
     }
 }
