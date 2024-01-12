@@ -3,7 +3,7 @@
 @section('content')
 <h1> Films </h1> 
 <a href="{{route('film.create')}}"><button type="button" class="btn btn-success">Create new film</button></a>
-<a href="{{route('film.all')}}"><button type="button" class="btn btn-success">Show all films</button></a>
+<a href="{{route('film.all')}}"><button type="button" class="btn btn-success">Show all films for change status</button></a>
 
 @include('layouts.error-message')
 
@@ -23,7 +23,5 @@
     </div>
 
 @endforeach
-
-
 
 @endsection

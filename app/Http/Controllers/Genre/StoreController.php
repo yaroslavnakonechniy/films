@@ -14,7 +14,5 @@ class StoreController extends BaseController
         $this->service->store($request);
 
         return redirect()->route('genre.index')->with('success', 'Дані булo додано успішно');
-
     }
-
 }

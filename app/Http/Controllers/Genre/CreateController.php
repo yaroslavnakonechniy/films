@@ -11,5 +11,4 @@ class CreateController extends Controller
 
         return view('genre.create');
     }
-
 }

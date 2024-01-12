@@ -38,3 +38,16 @@ Route::group(['namespace' => 'Film'], function (){
     Route::post('/film/{id}/update', 'UpdateController')->name('film.update');
     Route::get('/film/{id}/delete', 'DestroyController')->name('film.destroy');    
 });
+
+Route::group(['namespace' => 'Api'], function () {
+
+    Route::group(['namespace' => 'Film'], function () {
+        Route::get('/films', 'IndexController');
+        Route::get('/films/{id}', 'ShowController');
+    });
+
+    Route::group(['namespace' => 'Genre'], function () {
+        Route::get('/genres', 'IndexController');
+        Route::get('/genres/{id}', 'ShowFilmController');
+    });
+});

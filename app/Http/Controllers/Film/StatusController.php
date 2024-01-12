@@ -11,6 +11,5 @@ class StatusController extends BaseController
         $this->service->updateStatus($film_id);
         
         return redirect()->route('film.all')->with('success', 'Дані булo оновлено успішно');
-
     }
 }

@@ -71,11 +71,9 @@ class Service {
             if($film->status){
 
                 $film->status = 0;
-    
             }else{
     
                 $film->status = 1;
-    
             }
         }
 
